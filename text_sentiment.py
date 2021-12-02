@@ -1,26 +1,18 @@
-from enum import Enum
-
 from dostoevsky.tokenization import RegexTokenizer
 from dostoevsky.models import FastTextSocialNetworkModel
 
+from .sentiment import Sentiment
+
 dostoevsky_tokenizer = RegexTokenizer()
 dostoevsky_model = FastTextSocialNetworkModel(tokenizer=dostoevsky_tokenizer)
-
-class Sentiment(Enum):
-    POSITIVE = 1
-    NEUTRAL = 2
-    NEGATIVE = 3
-    UNIDENTIFIED = 4
 
 def process_label(label: str) -> Sentiment:
     if label == 'positive':
         return Sentiment.POSITIVE
     elif label == 'negative':
         return Sentiment.NEGATIVE
-    elif label == 'neutral' or label == 'speech':
-        return Sentiment.NEUTRAL
     else:
-        return Sentiment.UNIDENTIFIED
+        return Sentiment.NEUTRAL
 
 def get_texts_sentiment(texts: list[str]) -> list[Sentiment]:
     estimates = dostoevsky_model.predict(texts, k=1)
