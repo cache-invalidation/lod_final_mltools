@@ -1,3 +1,6 @@
+# Model for image sentiment analysis 
+image_models/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
