@@ -1,2 +1,2 @@
 # lod_final_mltools
-Machine Learning tools used for Data Analysis
+A collection of Machine Learning models and wrappers on top of them used in our solution for the Leaders of Digital hackathon.
