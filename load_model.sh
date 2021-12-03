@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+python -m dostoevsky download fasttext-social-network-model
+
 mkdir -p image_models/
 cd image_models
 
