@@ -1,0 +1,4 @@
+dostoevsky==0.6.0
+torch==1.10.0
+torchvision==0.11.1
+numpy==1.21.2
